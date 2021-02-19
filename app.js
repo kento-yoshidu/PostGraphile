@@ -1,12 +1,15 @@
 const http = require('http');
 const express = require('express');
+const ejs = require('ejs');
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.get('/', (req, res) => {
-  res.writeHead(200, {"Content-Type": "text/html"})
-  res.write("Hello Express")+
-  res.end();
+  res.render("./index.ejs", {
+    test: "Hello world!!!",
+  })
 })
 
 const server = http.createServer(app);
