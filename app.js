@@ -16,12 +16,11 @@ const client = new Client({
   port: 11111,
 });
 
+client.connect();
+
 app.get('/', (req, res) => {
 
-  client
-    .connect()
-    .then(() => console.log("connected"))
-    .then(() => client.query("SELECT *  FROM testtable"))
+    client.query("SELECT *  FROM testtable")
     .then(result => {
       searchBook();
       console.log(result.rows[0].id)
