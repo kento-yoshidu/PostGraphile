@@ -1,4 +1,7 @@
 node_modules/
 db/database/
+*.log
 
+# client
 .env
+.next/
