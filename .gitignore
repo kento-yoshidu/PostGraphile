@@ -5,3 +5,7 @@ db/database/
 # client
 .env
 .next/
+
+# server
+
+server/db/data/*
