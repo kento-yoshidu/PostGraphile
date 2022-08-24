@@ -10,7 +10,7 @@ module.exports = postgraphile(
     user: PG_USER,
     password: PASSWORD,
     host: HOST,
-    port: 11111
+    port: 5432
   },
   'public',
   {
