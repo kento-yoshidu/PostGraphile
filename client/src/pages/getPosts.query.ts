@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
-export const getPosts = gql`
-  query getBooks {
+export const getAllBooks = gql`
+  query getAllBooks {
     allBooks {
       nodes {
         id
@@ -16,8 +16,8 @@ interface Book {
   title: string
 }
 
-export interface BooksData {
+export interface BookList {
   allBooks: {
-    books: Book[]
+    nodes: Book[]
   }
 }

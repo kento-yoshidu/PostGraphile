@@ -1,18 +1,14 @@
 import { AppProps } from "next/app"
-import { ApolloProvider } from '@apollo/react-hooks';
-import { ApolloClient } from 'apollo-client';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
-
-const cache = new InMemoryCache();
-const link = new HttpLink({
-  uri: 'http://localhost:8080/graphql'
-});
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider
+} from "@apollo/client"
 
 const client = new ApolloClient({
-  cache,
-  link
-});
+  uri: 'http://localhost:8080/graphql',
+  cache: new InMemoryCache()
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
