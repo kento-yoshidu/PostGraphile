@@ -3,17 +3,14 @@ import { useQuery } from "@apollo/client"
 import { getAllBooks, BookList } from "../pages/getPosts.query"
 import { NextPage } from "next"
 
-interface PostsListProps {}
-
-const BookList: NextPage<PostsListProps> = () => {
+const BookList: NextPage = () => {
   const { loading, error, data } = useQuery<BookList>(getAllBooks)
   
-  const { nodes } = data.allBooks
-
+  if (!data) return null
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {JSON.stringify(error)}</p>
 
-  if (!nodes) return null
+  const { nodes } = data.allBooks
 
   return (
     <ul>
