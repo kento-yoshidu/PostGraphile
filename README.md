@@ -1,5 +1,9 @@
-# Postgraphile
+sample_app
+=====
 
-## 参考
+An OTP application
 
-https://apollographql-jp.com/tutorial/queries/
+Build
+-----
+
+    $ rebar3 compile

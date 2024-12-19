@@ -1,11 +1,20 @@
-node_modules/
-db/database/
-*.log
-
-# client
-.env
-.next/
-
-# server
-
-server/db/data/*
+.rebar3
+_build
+_checkouts
+_vendor
+.eunit
+*.o
+*.beam
+*.plt
+*.swp
+*.swo
+.erlang.cookie
+ebin
+log
+erl_crash.dump
+.rebar
+logs
+.idea
+*.iml
+rebar3.crashdump
+*~
